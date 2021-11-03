@@ -1,0 +1,19 @@
+{
+  "name": "hw-1-node",
+  "version": "1.0.0",
+  "description": "homework-1 node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "start:dev": "npx nodemon server"
+  },
+  "author": "Aleksandra605",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  },
+  "dependencies": {
+    "commander": "^8.3.0"
+  }
+}
