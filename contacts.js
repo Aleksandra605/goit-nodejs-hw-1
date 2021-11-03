@@ -1,12 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-// const contactsPath = './db/contacts,json';
-
 function listContacts() {
   fs.readFile(path.resolve('./db/contacts.json'), 'utf8', (error, data) => {
     if (error) {
-      console.log('something goes wrong........');
+      console.log('ooops........');
     }
     const contactsList = JSON.parse(data);
     console.log(contactsList);
@@ -17,7 +15,7 @@ function listContacts() {
 function getContactById(contactId) {
   fs.readFile(path.resolve('./db/contacts.json'), 'utf8', (error, data) => {
     if (error) {
-      console.log('something goes wrong........');
+      console.log('ooops........');
     }
     const contactsList = JSON.parse(data);
     console.log(contactsList.find((item) => item.id === Number(contactId)));
@@ -37,8 +35,6 @@ function removeContact(contactId) {
       return item.id !== Number(contactId);
     });
 
-    // console.log(list);
-
     fs.writeFile(
       './db/contacts.json',
       `${JSON.stringify(list)}`,
@@ -46,7 +42,8 @@ function removeContact(contactId) {
         if (error) {
           console.log('oops......');
         }
-        console.log('>>>>>>>>>>', json);
+        console.log(list);
+        console.log('works');
       }
     );
   });
@@ -71,6 +68,7 @@ function addContact(name, email, phone) {
           console.log('oops......');
         }
         console.log('must working');
+        console.log(json);
       }
     );
   });
